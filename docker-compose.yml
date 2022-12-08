@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DBNAME=ds
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5433:5432"
+
+  backend:
+    image: ds_backend
+    restart: always
+    environment:
+      spring.datasource.url: jdbc:postgresql://postgres:5432/ds
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+  frontend:
+    image: ds_frontend
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
