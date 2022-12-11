@@ -12,7 +12,7 @@ services:
       - "5432:5432"
 
   backend:
-    image: containerregistryiuliuandreisteau30642.azurecr.io/dsbackend
+    image: containerregistryiuliuandreisteau30642.azurecr.io/ds_backend
     restart: always
     ports:
       - "8080:8080"
@@ -20,7 +20,7 @@ services:
       - postgres
 
   frontend:
-    image: containerregistryiuliuandreisteau30642.azurecr.io/dsfrontend
+    image: containerregistryiuliuandreisteau30642.azurecr.io/ds_frontend
     restart: on-failure
     ports:
       - "3000:3000"
