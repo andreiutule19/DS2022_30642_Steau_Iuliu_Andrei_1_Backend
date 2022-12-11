@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   postgres:
     image: containerregistryiuliuandreisteau30642.azurecr.io/db
@@ -10,7 +9,7 @@ services:
       - POSTGRES_DBNAME=ds
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
-      - "5433:5432"
+      - "5432:5432"
 
   backend:
     image: containerregistryiuliuandreisteau30642.azurecr.io/ds_backend
