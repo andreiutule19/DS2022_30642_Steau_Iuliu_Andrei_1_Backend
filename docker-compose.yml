@@ -12,7 +12,7 @@ services:
       - "5432:5432"
 
   backend:
-    image: containerregistryiuliuandreisteau30642.azurecr.io/iuliuandreisteau30642backend:90
+    image: containerregistryiuliuandreisteau30642.azurecr.io/iuliuandreisteau30642backend:92
     restart: always
     environment:
       DB_IP: postgres
