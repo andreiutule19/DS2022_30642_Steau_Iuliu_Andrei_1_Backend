@@ -12,7 +12,7 @@ services:
       - "5432:5432"
 
   backend:
-    image: containerregistryiuliuandreisteau30642.azurecr.io/ds_backend
+    image: containerregistryiuliuandreisteau30642.azurecr.io/iuliuandreisteau30642backend
     restart: always
     environment:
       DB_IP: postgres
@@ -26,7 +26,7 @@ services:
       - postgres
 
   frontend:
-    image: containerregistryiuliuandreisteau30642.azurecr.io/ds_frontend
+    image: containerregistryiuliuandreisteau30642.azurecr.io/iuliuandreisteau30642frontend
     restart: on-failure
     ports:
       - "3000:3000"
