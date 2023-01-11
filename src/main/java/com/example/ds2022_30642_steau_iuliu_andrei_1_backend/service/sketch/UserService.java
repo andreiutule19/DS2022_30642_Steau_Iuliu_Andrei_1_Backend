@@ -23,4 +23,5 @@ public interface UserService {
 
     List<DeviceDTO> getAssociatedDevices(String email);
 
+    Boolean checkUser(String email);
 }

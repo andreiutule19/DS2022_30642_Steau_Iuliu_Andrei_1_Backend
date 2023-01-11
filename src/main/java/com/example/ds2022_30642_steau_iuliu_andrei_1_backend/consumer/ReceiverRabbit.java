@@ -30,6 +30,7 @@ public class ReceiverRabbit implements RabbitListenerConfigurer {
 
     private static final Logger logger = LoggerFactory.getLogger(ReceiverRabbit.class);
     private final ApplicationEventPublisher eventPublisher;
+
     @Autowired
     private EnergyService energyService;
 
@@ -41,7 +42,7 @@ public class ReceiverRabbit implements RabbitListenerConfigurer {
 
     @RabbitListener(queues = "${spring.rabbitmq.queue}")
     public void receivedMessage(String measuresDTO) {
-
+        
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             Timestamp timestamp = Timestamp.from(Instant.now());

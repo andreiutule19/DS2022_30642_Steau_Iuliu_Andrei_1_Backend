@@ -131,5 +131,11 @@ public class UserServiceImpl implements UserService {
         return DeviceBuilder.toDeviceDTOList(user.get().getDevices());
     }
 
+    @Override
+    public Boolean checkUser(String email) {
+        Optional<User> user= userRepository.findUserByEmail(email);
+        return user.isPresent();
+    }
+
 
 }

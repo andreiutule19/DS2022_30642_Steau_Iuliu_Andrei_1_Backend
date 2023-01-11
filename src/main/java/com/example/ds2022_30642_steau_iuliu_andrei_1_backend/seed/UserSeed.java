@@ -28,6 +28,12 @@ public class UserSeed implements CommandLineRunner {
             User user = new User("andrei_steau@yahoo.com",
                     new BCryptPasswordEncoder().encode("role"),"Andrei",Role.ADMIN);
             factory.save(user);
+            User user1 = new User("andrei_steau1@yahoo.com",
+                    new BCryptPasswordEncoder().encode("role"),"Andrei",Role.ADMIN);
+            factory.save(user1);
+            User user2 = new User("andrei_steau2@yahoo.com",
+                    new BCryptPasswordEncoder().encode("role"),"Andrei",Role.ADMIN);
+            factory.save(user2);
         }
         if(factory3.findAll().isEmpty()){
             Device device = new Device("new Product","Strada necunoscuta",13F);

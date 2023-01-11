@@ -46,7 +46,7 @@ public class ConfigRabbit {
     @Bean
     public ConnectionFactory connectionFactory() {
         String uri = System.getenv("CLOUDAMQP_URL");
-        if (uri == null) uri = "";
+        if (uri == null) uri = "amqps://turflern:02XGY7K9zeBan4rxUkX0K7XoPbIo98kB@goose.rmq2.cloudamqp.com/turflern";
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
         cachingConnectionFactory.setUri(uri);
         return cachingConnectionFactory;
